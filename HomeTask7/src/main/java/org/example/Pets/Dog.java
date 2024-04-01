@@ -6,7 +6,7 @@ public class Dog extends Pet implements Fouling {
         super(  nickname);
         this.setSpecies(Species.Dog);
     }
-    public Dog( String nickname, int age, int trickLevel, String[] habits) {
+    public Dog( String nickname, int age, int trickLevel, String habits) {
         super( nickname , age , trickLevel , habits);
         this.setSpecies(Species.Dog);
     }

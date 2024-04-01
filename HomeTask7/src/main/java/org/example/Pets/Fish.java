@@ -7,7 +7,7 @@ public class Fish extends Pet {
         this.setSpecies(Species.Fish);
     }
 
-    public Fish( String nickname, int age, int trickLevel, String[] habits) {
+    public Fish( String nickname, int age, int trickLevel, String habits) {
         super(nickname, age, trickLevel, habits);
         this.setSpecies(Species.Fish);
     }

@@ -10,19 +10,19 @@ import java.util.List;
 import java.util.Objects;
 
 public class Family {
-    Human mother;
-    Human father;
+    Woman mother;
+    Man father;
     List<Human> children = new ArrayList<>();
     Pet pet;
 
-    public Family(Human mother, Human father) {
+    public Family(Woman mother, Man father) {
         this.mother = mother;
         this.father = father;
         mother.setFamily(this);
         father.setFamily(this);
     }
 
-    public Family(Human mother, Human father, Pet pet, List<Human>  children) {
+    public Family(Woman mother, Man father, Pet pet, List<Human>  children) {
         this.mother = mother;
         this.father = father;
         mother.setFamily(this);
@@ -37,7 +37,7 @@ public class Family {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Family family = (Family) o;
-        return Objects.equals(mother, family.mother) && Objects.equals(father, family.father) && Arrays.equals(children, family.children) && Objects.equals(pet, family.pet);
+        return Objects.equals(mother, family.mother) && Objects.equals(father, family.father) && Objects.equals(children , family.children) && Objects.equals(pet, family.pet);
     }
 
     @Override
@@ -47,11 +47,11 @@ public class Family {
         return result;
     }
 
-    public void setMother(Human mother) {
+    public void setMother(Woman mother) {
         this.mother = mother;
     }
 
-    public void setFather(Human father) {
+    public void setFather(Man father) {
         this.father = father;
     }
 
@@ -63,11 +63,11 @@ public class Family {
         this.pet = pet;
     }
 
-    public Human getMother() {
+    public Woman getMother() {
         return mother;
     }
 
-    public Human getFather() {
+    public Man getFather() {
         return father;
     }
 
@@ -84,10 +84,14 @@ public class Family {
     }
 
     public boolean deleteChild(int index) {
-        children.remove(index); // ожидает булен а у меня дженерик
+        if (index >= 0 && index < children.size()) {
+            children.remove(index);
+            return true;
+        }
+        return false;
     }
     public boolean deleteChild(Human human){
-        children.remove(human);  // ожидает булен а у меня дженерик
+        return children.remove(human);
     }
 
 

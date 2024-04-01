@@ -7,7 +7,7 @@ public class RoboCat extends Pet{
         this.setSpecies(Species.RoboCat);
     }
 
-    public RoboCat( String nickname, int age, int trickLevel, String[] habits) {
+    public RoboCat( String nickname, int age, int trickLevel, String habits) {
         super( nickname, age, trickLevel, habits);
         this.setSpecies(Species.RoboCat);
     }
