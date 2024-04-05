@@ -15,16 +15,21 @@ public class Family {
     public Family(Woman mother, Man father) {
         this.mother = mother;
         this.father = father;
+        mother.setFamily(this);
+        father.setFamily(this);
+        for (Human childrens : children){
+            childrens.setFamily(this);
+        }
     }
 
-    public Family(Woman mother, Man father, Pet pet, Human  children) {
+    public Family(Woman mother, Man father, Pet pet, List<Human>  children) {
         this.mother = mother;
         this.father = father;
         mother.setFamily(this);
         father.setFamily(this);
         this.pet.add(pet);
         pet.setFamily(this);
-        this.children.add(children);
+        this.children = children;
     }
 
     @Override
