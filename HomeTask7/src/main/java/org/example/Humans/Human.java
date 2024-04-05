@@ -2,6 +2,8 @@ package org.example.Humans;
 
 
 
+import org.example.Pets.Pet;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -107,14 +109,16 @@ public class Human {
     }
 
     public void greetPet() {
-        System.out.printf("Привіт, %s \n", family.getPet().getNickname());
+        for (Pet petInd : family.pet)  System.out.printf("Привіт, %s \n", petInd.getNickname());
     }
 
     public void describePet() {
-        if (family.getPet().getTrickLevel() > 50) {
-            System.out.printf("У мене є %s, їй %d років, він дуже хитрий", family.getPet().getSpecies(), family.getPet().getAge());
-        } else {
-            System.out.printf("У мене є %s, їй %d років, він майже не хитрий", family.getPet().getSpecies(), family.getPet().getAge());
+        for (Pet petInd : family.pet) {
+            if (petInd.getTrickLevel() > 50) {
+                System.out.printf("У мене є %s, їй %d років, він дуже хитрий", petInd.getSpecies(), petInd.getAge());
+            } else {
+                System.out.printf("У мене є %s, їй %d років, він майже не хитрий", petInd.getSpecies(), petInd.getAge());
+            }
         }
     }
 

@@ -4,16 +4,13 @@ package org.example.Humans;
 
 import org.example.Pets.Pet;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Family {
     Woman mother;
     Man father;
     List<Human> children = new ArrayList<>();
-    Pet pet;
+    Set<Pet> pet;
 
     public Family(Woman mother, Man father) {
         this.mother = mother;
@@ -27,7 +24,7 @@ public class Family {
         this.father = father;
         mother.setFamily(this);
         father.setFamily(this);
-        this.pet = pet;
+        this.pet.add(pet);
         pet.setFamily(this);
         this.children = children;
     }
@@ -60,7 +57,7 @@ public class Family {
     }
 
     public void setPet(Pet pet) {
-        this.pet = pet;
+        this.pet.add(pet);
     }
 
     public Woman getMother() {
@@ -75,7 +72,7 @@ public class Family {
         return children;
     }
 
-    public Pet getPet() {
+    public Set<Pet> getPet() {
         return pet;
     }
 

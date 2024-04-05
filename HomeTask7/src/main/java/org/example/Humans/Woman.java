@@ -1,5 +1,7 @@
 package org.example.Humans;
 
+import org.example.Pets.Pet;
+
 import java.util.Map;
 
 public final class Woman extends Human{
@@ -16,7 +18,7 @@ public final class Woman extends Human{
     }
     @Override
     public void greetPet() {
-        System.out.printf("Іди сюди чудо моє ,як ти  %s \n", getFamily().getPet().getNickname());
+        for (Pet pets : getFamily().getPet()) System.out.printf("Іди сюди чудо моє ,як ти  %s \n", pets.getNickname());
     }
     public void makeup (){
         System.out.println("Почекай мені треба зробити makeup");
