@@ -15,18 +15,16 @@ public class Family {
     public Family(Woman mother, Man father) {
         this.mother = mother;
         this.father = father;
-        mother.setFamily(this);
-        father.setFamily(this);
     }
 
-    public Family(Woman mother, Man father, Pet pet, List<Human>  children) {
+    public Family(Woman mother, Man father, Pet pet, Human  children) {
         this.mother = mother;
         this.father = father;
         mother.setFamily(this);
         father.setFamily(this);
         this.pet.add(pet);
         pet.setFamily(this);
-        this.children = children;
+        this.children.add(children);
     }
 
     @Override
